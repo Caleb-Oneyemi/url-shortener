@@ -1,3 +1,3 @@
 # url-shortener
 
-- A Url shortener using GrpahQL, Node, Express and MongoDB
+- A Url shortener using GraphQL, Node, Express and MongoDB
