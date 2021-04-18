@@ -6,13 +6,13 @@ const Url = require('./models/url-model');
 const getNewUrl = async (longUrl) => {
     const baseUrl = process.env.BASE_URL;
 
-    if (!validUrl.isUri(baseUrl)) {
+    if (!validUrl.isHttpsUri(baseUrl)) {
         throw new Error('invalid base url');
     }
 
     const urlCode = nanoid(6);
 
-    if (validUrl.isUri(longUrl)) {
+    if (validUrl.isHttpUri(longUrl) || validUrl.isHttpsUri(longUrl)) {
         try {
             let url = await Url.findOne({ longUrl });
 
